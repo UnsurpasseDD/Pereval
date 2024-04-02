@@ -3,22 +3,26 @@ from rest_framework import serializers
 
 
 class UserSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = Users
         fields = ['email', 'first_name', 'last_name', 'patronymic', 'id', 'phone']
 
 class CoordsSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = Coords
         fields = ['latitude', 'longitude', 'height']
 
 class LevelSerializer(serializers.ModelSerializer):
-    model = Level
-    fields = ['winter', 'spring', 'summer','autumn']
+    class Meta:
+        model = Level
+        fields = ['winter', 'spring', 'summer','autumn']
 
 class ImageSerializer(serializers.ModelSerializer):
-    model = Images
-    fields = ['image', 'title']
+    class Meta:
+        model = Images
+        fields = ['image', 'title']
 
 class PerevalSerializer(serializers.ModelSerializer):
     turist_id = UserSerializer()
