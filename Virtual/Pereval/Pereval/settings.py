@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'mountain',
     'rest_framework',
     'django_filters',
-    'drf_spectacular',
+    # 'drf_spectacular',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -99,8 +100,8 @@ DATABASES = {
 REST_FRAMEWORK = {
    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+   'PAGE_SIZE': 10,
    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
-   'PAGE_SIZE': 10
 }
 
 # Password validation
@@ -144,10 +145,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SPECTACULAR_SETTINGS = {
-    'TITLE': 'Django5 Test Swagger API',
-    'DESCRIPTION': 'Django5 Test Swagger API description',
-    'VERSION': '1.0.0',
-    'SERVE_INCLUDE_SCHEMA': False,
-    # OTHER SETTINGS
-}
+# SPECTACULAR_SETTINGS = {
+#     'TITLE': 'Django5 Test Swagger API',
+#     'DESCRIPTION': 'Django5 Test Swagger API description',
+#     'VERSION': '1.0.0',
+#     'SERVE_INCLUDE_SCHEMA': False,
+#     # OTHER SETTINGS
+# }
